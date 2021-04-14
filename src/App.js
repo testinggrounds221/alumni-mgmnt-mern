@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+//import { Signup } from "./components/SignUp";
+import SignUp2 from "./components/SignUp2";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Trying Rebuild
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mt-3">
+      <div className="row">
+        <div className="col-md-5">
+          <SignUp2 />
+        </div>
+        <div className="col-md-7 my-auto">
+          <img className="img-fluid w-100" src="" alt="" />
+        </div>
+      </div>
     </div>
   );
 }
