@@ -1,17 +1,24 @@
 import "./App.css";
+import React from "react";
+import { Router, Route, Switch } from "react-router-dom";
 //import { Signup } from "./components/SignUp";
-import SignUp2 from "./components/SignUp2";
+import SignUp from "./views/SignUp";
+import Login from "./views/Login";
+import Profile from "./views/Profile";
+import history from "./history";
+
 function App() {
   return (
-    <div className="container mt-3">
-      <div className="row">
-        <div className="col-md-5">
-          <SignUp2 />
+    <div className="ui container">
+      <Router history={history}>
+        <div>
+          <Switch>
+            <Route path="/signup" component={SignUp} />
+            <Route path="/login" component={Login} />
+            <Route path="/profile" component={Profile} />
+          </Switch>
         </div>
-        <div className="col-md-7 my-auto">
-          <img className="img-fluid w-100" src="" alt="" />
-        </div>
-      </div>
+      </Router>
     </div>
   );
 }
