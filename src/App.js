@@ -5,6 +5,8 @@ import { Router, Route, Switch } from "react-router-dom";
 import SignUp from "./views/SignUp";
 import Login from "./views/Login";
 import Profile from "./views/Profile";
+import Home from "./views/Home";
+
 import history from "./history";
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
       <Router history={history}>
         <div>
           <Switch>
+            <Route path="/" exact component={Home}></Route>
             <Route path="/signup" component={SignUp} />
             <Route path="/login" component={Login} />
             <Route path="/profile" component={Profile} />
