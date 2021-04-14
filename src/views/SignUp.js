@@ -4,6 +4,7 @@ import { TextField } from "../components/TextField";
 import CustomSelect from "../components/CustomSelect";
 import * as Yup from "yup";
 import server from "../api/alumni-mgmnt-backend";
+import history from "../history";
 
 class SignUp extends React.Component {
   state = {
@@ -48,11 +49,10 @@ class SignUp extends React.Component {
     }
 
     if (canStore) {
-      await server
-        .post("/users", { ...values })
-        .then((response1) =>
-          localStorage.setItem("token", response1.data.token)
-        );
+      await server.post("/users", { ...values }).then((response1) => {
+        localStorage.setItem("token", response1.data.token);
+        history.push("/profile");
+      });
 
       //localStorage.getItem('rememberMe')
       //localStorage.setItem('token', );
