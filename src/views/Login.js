@@ -5,7 +5,16 @@ import * as Yup from "yup";
 import server from "../api/alumni-mgmnt-backend";
 import history from "../history";
 
-class SignUp extends React.Component {
+class Login extends React.Component {
+  state = { loginSuccess: true };
+
+  async componentDidMount() {
+    if (!localStorage.getItem("token") === null) {
+      console.log("Logged in");
+      history.push("/profile");
+    }
+  }
+//////// CCHECKKKKKKK THIS    SHITTTTTTTTT 
   onFormSubmit = async (values) => {
     let canStore = true;
 
@@ -19,7 +28,8 @@ class SignUp extends React.Component {
           localStorage.setItem("token", response1.data.token);
           localStorage.setItem("user", response1.data.user);
           history.push("/profile");
-        });
+        })
+        .catch((e) => this.setState({ loginSuccess: false }));
 
       //localStorage.getItem('rememberMe')
       //localStorage.setItem('token', );
@@ -61,7 +71,9 @@ class SignUp extends React.Component {
                       name="password"
                       type="password"
                     />
-
+                    {!this.state.loginSuccess && (
+                      <div className="text-danger">Wrong Credentials</div>
+                    )}
                     <button className="btn btn-dark mt-3" type="submit">
                       Login
                     </button>
@@ -76,4 +88,4 @@ class SignUp extends React.Component {
   }
 }
 
-export default SignUp;
+export default Login;

@@ -1,10 +1,15 @@
 import React from "react";
 import server from "../api/alumni-mgmnt-backend";
+import history from "../history";
 //Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDc2YjcyYmQ5ZDNiMTAwMTU1OWQ1MTAiLCJpYXQiOjE2MTgzOTI4NzV9.f_om8BFjAHhz5ldxFLmFxtRs9PYKFACOYjPjpuXQEXQ
 class Profile extends React.Component {
   state = { user: Object };
 
   async componentDidMount() {
+    if (localStorage.getItem("token") === null) {
+      history.push("/login");
+    }
+
     await server
       .get("/users/me", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -14,6 +19,11 @@ class Profile extends React.Component {
         console.log(this.state.user);
       })
       .catch((er) => console.log(er));
+  }
+
+  onClickLogout() {
+    localStorage.removeItem("token");
+    history.push("/login");
   }
 
   render() {
@@ -50,6 +60,14 @@ class Profile extends React.Component {
             </div>
             <hr className="my-4" />
             <p>{this.state.user.permanent_address}</p>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                this.onClickLogout();
+              }}
+            >
+              Logout
+            </button>
           </div>
         </div>
       </div>
