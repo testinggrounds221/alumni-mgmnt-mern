@@ -7,6 +7,7 @@ import Login from "./views/Login";
 import Profile from "./views/Profile";
 import Home from "./views/Home";
 import TableView from "./views/TableView";
+import QueryView from "./views/QueryView";
 
 import history from "./history";
 
@@ -21,6 +22,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/profile" component={Profile} />
             <Route path="/view" component={TableView} />
+            <Route path="/query" component={QueryView} />
           </Switch>
         </div>
       </Router>

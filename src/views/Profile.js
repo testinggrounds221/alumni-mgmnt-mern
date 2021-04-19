@@ -61,6 +61,7 @@ class Profile extends React.Component {
             <hr className="my-4" />
             <p>{this.state.user.permanent_address}</p>
             <button
+              className="btn btn-danger"
               onClick={(e) => {
                 e.preventDefault();
                 this.onClickLogout();

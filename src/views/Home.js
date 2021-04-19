@@ -12,7 +12,7 @@ class Home extends React.Component {
         <Link to="/login">Login</Link>
         <Link to="/profile">Profile</Link>
         <Link to="/view">Tables</Link>
-
+        <Link to="/query">Query</Link>
       </div>
     );
   }
