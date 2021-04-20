@@ -21,31 +21,29 @@ class Peers extends React.Component {
     return (
       <div className="row">
         {this.state.users.map((user) => {
-          if (user.authenticated === true) {
-            return (
-              <div class="col-sm-4">
-                <div className="card m-4" style={{ width: "18rem" }}>
-                  <div className="card-body text-center">
-                    <h5 className="card-title">{user.firstName}</h5>
-                    <p className="card-text">
-                      Passed out on {user.passOutYear} from{" "}
-                      {deptOptions[parseInt(user.departmentId[1])]} department,{" "}
-                      {user.firstName} is a {user.companyRole} in{" "}
-                      {user.companyName}
-                    </p>
-                    <a
-                      target="_blank"
-                      rel="noreferrer"
-                      href={`https://alumnimgmnt.netlify.app/publicprofile/${user._id}`}
-                      className="btn btn-primary"
-                    >
-                      View Profile
-                    </a>
-                  </div>
+          return (
+            <div class="col-sm-4">
+              <div className="card m-4" style={{ width: "18rem" }}>
+                <div className="card-body text-center">
+                  <h5 className="card-title">{user.firstName}</h5>
+                  <p className="card-text">
+                    Passed out on {user.passOutYear} from{" "}
+                    {deptOptions[parseInt(user.departmentId[1])]} department,{" "}
+                    {user.firstName} is a {user.companyRole} in{" "}
+                    {user.companyName}
+                  </p>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href={`https://alumnimgmnt.netlify.app/publicprofile/${user._id}`}
+                    className="btn btn-primary"
+                  >
+                    View Profile
+                  </a>
                 </div>
               </div>
-            );
-          }
+            </div>
+          );
         })}
       </div>
     );
