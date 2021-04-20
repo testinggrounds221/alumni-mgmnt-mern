@@ -15,24 +15,30 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Link to="/profile" className="btn btn-success m-3 " role="button">
-          My Profile
-        </Link>
         <Link to="/signup" className="btn btn-success m-3 " role="button">
           Sign Up
         </Link>
-        <Link to="/login" className="btn btn-success m-3 " role="button">
-          Login
-        </Link>
-        <button
-          className="btn btn-danger m-3"
-          onClick={(e) => {
-            e.preventDefault();
-            this.onClickLogout();
-          }}
-        >
-          Logout
-        </button>
+        {localStorage.getItem("token") === null && (
+          <Link to="/login" className="btn btn-success m-3 " role="button">
+            Login
+          </Link>
+        )}
+        {localStorage.getItem("token") !== null && (
+          <React.Fragment>
+            <Link to="/profile" className="btn btn-success m-3 " role="button">
+              My Profile
+            </Link>
+            <button
+              className="btn btn-danger m-3"
+              onClick={(e) => {
+                e.preventDefault();
+                this.onClickLogout();
+              }}
+            >
+              Logout
+            </button>
+          </React.Fragment>
+        )}
       </div>
     );
   }

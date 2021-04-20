@@ -9,6 +9,9 @@ import Home from "./views/Home";
 import TableView from "./views/TableView";
 import QueryView from "./views/QueryView";
 import UnauthorizedPage from "./views/UnauthorizedPage";
+import PublicProfile from "./views/PublicProfile";
+import Peers from "./views/Peers";
+
 import { Link } from "react-router-dom";
 import history from "./history";
 
@@ -28,6 +31,8 @@ function App() {
             <Route path="/view" component={TableView} />
             <Route path="/query" component={QueryView} />
             <Route path="/unauth" component={UnauthorizedPage} />
+            <Route path="/publicprofile/:id" component={PublicProfile} />
+            <Route path="/mypeers" component={Peers} />
           </Switch>
         </div>
       </Router>

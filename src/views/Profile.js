@@ -30,6 +30,20 @@ class Profile extends React.Component {
     localStorage.removeItem("token");
     history.push("/login");
   }
+  myFunction() {
+    /* Get the text field */
+    var copyText = document.getElementById("myInput");
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+
+    /* Copy the text inside the text field */
+    document.execCommand("copy");
+
+    /* Alert the copied text */
+    //alert("Copied the text: " + copyText.value);
+  }
 
   collegeProfile() {
     const newTo = {
@@ -86,6 +100,10 @@ class Profile extends React.Component {
   }
 
   studentProfile() {
+    const toMyPeers = {
+      pathname: "/mypeers",
+      clID: this.state.user.collegeId,
+    };
     return (
       <div className="card-body pt-0 pt-md-4">
         <div className="row">
@@ -118,6 +136,15 @@ class Profile extends React.Component {
           </div>
           <hr className="my-4" />
           <p>{this.state.user.permanent_address}</p>
+          <p className="lead">Click To Copy your Public URL</p>
+          <input
+            readonly
+            value={`https://alumnimgmnt.netlify.app/publicprofile/${this.state.user._id}`}
+            className="mx-auto form-control my-5 text-center"
+            style={{ width: "600px" }}
+            onClick={this.myFunction}
+            id="myInput"
+          ></input>
           <button
             className="btn btn-danger"
             onClick={(e) => {
@@ -127,6 +154,9 @@ class Profile extends React.Component {
           >
             Logout
           </button>
+          <Link to={toMyPeers} className="btn btn-success m-3" role="button">
+            My Peers
+          </Link>
         </div>
       </div>
     );
