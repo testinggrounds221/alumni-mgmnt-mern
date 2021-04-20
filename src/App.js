@@ -8,13 +8,17 @@ import Profile from "./views/Profile";
 import Home from "./views/Home";
 import TableView from "./views/TableView";
 import QueryView from "./views/QueryView";
-
+import UnauthorizedPage from "./views/UnauthorizedPage";
+import { Link } from "react-router-dom";
 import history from "./history";
 
 function App() {
   return (
     <div className="ui container">
       <Router history={history}>
+        <Link to="/" className="btn btn-success m-3 " role="button">
+          Home
+        </Link>
         <div>
           <Switch>
             <Route path="/" exact component={Home}></Route>
@@ -23,6 +27,7 @@ function App() {
             <Route path="/profile" component={Profile} />
             <Route path="/view" component={TableView} />
             <Route path="/query" component={QueryView} />
+            <Route path="/unauth" component={UnauthorizedPage} />
           </Switch>
         </div>
       </Router>

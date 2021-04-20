@@ -36,6 +36,7 @@ class QueryView extends React.Component {
         filterValue: this.filterValue,
         sortBy: sortByTxt,
         sortOrder: this.sortOrder,
+        showCollege: this.props.location.clID,
       })
       .then((response) => {
         this.setState({ users: response.data });
@@ -108,7 +109,7 @@ class QueryView extends React.Component {
         </div>
 
         <br></br>
-        <div class="mx-auto my-3" style={{ width: "200px" }}>
+        <div className="mx-auto my-3" style={{ width: "200px" }}>
           <button
             className="btn btn-success"
             onClick={(e) => {
@@ -127,9 +128,10 @@ class QueryView extends React.Component {
     return (
       <div>
         {this.filterBar()}
+
         <table className="table">
           <thead>
-            <tr>
+            <tr className="text-center">
               <th>Name</th>
               <th>Passed Out Year</th>
               <th>Department</th>
@@ -138,6 +140,7 @@ class QueryView extends React.Component {
               <th>Linked Profile</th>
             </tr>
           </thead>
+
           <tbody>
             {this.state.users.map((user) => {
               return (
@@ -150,6 +153,9 @@ class QueryView extends React.Component {
             })}
           </tbody>
         </table>
+        {this.state.users.length === 0 && (
+          <p className="text-center">No Results Matching The Query</p>
+        )}
       </div>
     );
   }

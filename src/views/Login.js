@@ -4,6 +4,7 @@ import { TextField } from "../components/TextField";
 import * as Yup from "yup";
 import server from "../api/alumni-mgmnt-backend";
 import history from "../history";
+import { Link } from "react-router-dom";
 
 class Login extends React.Component {
   state = { loginSuccess: true };
@@ -14,7 +15,7 @@ class Login extends React.Component {
       history.push("/profile");
     }
   }
-//////// CCHECKKKKKKK THIS    SHITTTTTTTTT 
+  //////// CCHECKKKKKKK THIS    SHITTTTTTTTT
   onFormSubmit = async (values) => {
     let canStore = true;
 
@@ -74,9 +75,12 @@ class Login extends React.Component {
                     {!this.state.loginSuccess && (
                       <div className="text-danger">Wrong Credentials</div>
                     )}
-                    <button className="btn btn-dark mt-3" type="submit">
+                    <button className="btn btn-success m-3 px-4" type="submit">
                       Login
                     </button>
+                    <Link className="btn btn-dark m-3" to="/signup">
+                      Sign Up
+                    </Link>
                   </Form>
                 </div>
               )}

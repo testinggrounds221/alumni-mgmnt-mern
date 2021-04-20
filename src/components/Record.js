@@ -7,7 +7,7 @@ export const Record = ({ onSubmit, user, ...props }) => {
   let dpNames = ["", "IT", "CS", "Mech", "Civil"];
 
   return (
-    <tr>
+    <tr className="text-center">
       <td>{user.firstName}</td>
       <td>{user.passOutYear}</td>
       <td>{dpNames[parseInt(user.departmentId[1])]}</td>
