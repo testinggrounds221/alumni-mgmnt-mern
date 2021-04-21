@@ -78,10 +78,10 @@ class Profile extends React.Component {
           <div className="h5 mt-4"></div>
 
           <hr className="my-4" />
-          <Link to={newTo} className="btn btn-success m-3" role="button">
+          <Link to={newTo} className="btn btn-outline-success m-3" role="button">
             All Students
           </Link>
-          <Link to={toQuery} className="btn btn-success m-3" role="button">
+          <Link to={toQuery} className="btn btn-outline-success m-3" role="button">
             Query Students
           </Link>
 

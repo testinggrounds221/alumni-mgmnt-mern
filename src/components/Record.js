@@ -28,7 +28,7 @@ export const Record = ({ onSubmit, user, ...props }) => {
         {auth && (
           <button
             type="button"
-            className="btn btn-outline-danger"
+            className="btn btn-outline-secondary"
             onClick={(e) => {
               e.preventDefault();
               setAuth(false);

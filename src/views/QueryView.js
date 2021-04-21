@@ -129,7 +129,7 @@ class QueryView extends React.Component {
       <div>
         {this.filterBar()}
 
-        <table className="table">
+        <table className="m-5 p-5 table table-dark table-striped">
           <thead>
             <tr className="text-center">
               <th>Name</th>

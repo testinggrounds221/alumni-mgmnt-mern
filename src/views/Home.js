@@ -15,30 +15,47 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <Link to="/signup" className="btn btn-success m-3 " role="button">
-          Sign Up
-        </Link>
-        {localStorage.getItem("token") === null && (
-          <Link to="/login" className="btn btn-success m-3 " role="button">
-            Login
+        <h1 className="cover-heading text-center display-3">
+          Welcome To Cumulus Alumni Management System
+        </h1>
+        <div className="text-center mt-5">
+          <Link
+            to="/signup"
+            className="btn btn-primary m-3 "
+            role="button"
+          >
+            Sign Up
           </Link>
-        )}
-        {localStorage.getItem("token") !== null && (
-          <React.Fragment>
-            <Link to="/profile" className="btn btn-success m-3 " role="button">
-              My Profile
-            </Link>
-            <button
-              className="btn btn-danger m-3"
-              onClick={(e) => {
-                e.preventDefault();
-                this.onClickLogout();
-              }}
+          {localStorage.getItem("token") === null && (
+            <Link
+              to="/login"
+              className="btn btn-outline-success m-3 "
+              role="button"
             >
-              Logout
-            </button>
-          </React.Fragment>
-        )}
+              Login
+            </Link>
+          )}
+          {localStorage.getItem("token") !== null && (
+            <React.Fragment>
+              <Link
+                to="/profile"
+                className="btn btn-outline-secondary m-3 "
+                role="button"
+              >
+                My Profile
+              </Link>
+              <button
+                className="btn btn-danger m-3"
+                onClick={(e) => {
+                  e.preventDefault();
+                  this.onClickLogout();
+                }}
+              >
+                Logout
+              </button>
+            </React.Fragment>
+          )}
+        </div>
       </div>
     );
   }

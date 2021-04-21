@@ -42,8 +42,8 @@ class TableView extends React.Component {
 
   render() {
     return (
-      <div>
-        <table className="table">
+      <div className="p-5">
+        <table className="p-5 table table-dark table-striped">
           <thead>
             <tr className="text-center">
               <th>Name</th>

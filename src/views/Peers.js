@@ -23,7 +23,7 @@ class Peers extends React.Component {
         {this.state.users.map((user) => {
           return (
             <div class="col-sm-4">
-              <div className="card m-4" style={{ width: "18rem" }}>
+              <div className="card m-4 bg-dark text-white" style={{ width: "20rem" }}>
                 <div className="card-body text-center">
                   <h5 className="card-title">{user.firstName}</h5>
                   <p className="card-text">

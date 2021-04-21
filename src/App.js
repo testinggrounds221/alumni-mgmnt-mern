@@ -8,21 +8,20 @@ import Profile from "./views/Profile";
 import Home from "./views/Home";
 import TableView from "./views/TableView";
 import QueryView from "./views/QueryView";
+import Header from "./components/Header";
 import UnauthorizedPage from "./views/UnauthorizedPage";
 import PublicProfile from "./views/PublicProfile";
 import Peers from "./views/Peers";
 
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import history from "./history";
 
 function App() {
   return (
-    <div className="ui container">
-      <Router history={history}>
-        <Link to="/" className="btn btn-success m-3 " role="button">
-          Home
-        </Link>
-        <div>
+    <Router history={history}>
+      <Header />
+      <div className="min-vh-100" style={{ backgroundColor: "#F0F8FF" }}>
+        <div className="ui container">
           <Switch>
             <Route path="/" exact component={Home}></Route>
             <Route path="/signup" component={SignUp} />
@@ -35,8 +34,8 @@ function App() {
             <Route path="/mypeers" component={Peers} />
           </Switch>
         </div>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 
