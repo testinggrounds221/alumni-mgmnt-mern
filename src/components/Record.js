@@ -28,7 +28,7 @@ export const Record = ({ onSubmit, user, ...props }) => {
         {auth && (
           <button
             type="button"
-            className="btn btn-outline-secondary"
+            className="btn btn-outline-secondary text-white"
             onClick={(e) => {
               e.preventDefault();
               setAuth(false);
@@ -40,8 +40,23 @@ export const Record = ({ onSubmit, user, ...props }) => {
         )}
       </td>
       <td>
-        <a href="https://www.linkedin.com/" rel="noreferrer" target="_blank">
+        <a
+          href="https://www.linkedin.com/"
+          rel="noreferrer"
+          target="_blank"
+          className="btn btn-outline-info"
+        >
           Linked In
+        </a>
+      </td>
+      <td>
+        <a
+          href={`https://alumnimgmnt.netlify.app/publicprofile/${user._id}`}
+          rel="noreferrer"
+          target="_blank"
+          className="btn btn-outline-light"
+        >
+          View Profile
         </a>
       </td>
     </tr>

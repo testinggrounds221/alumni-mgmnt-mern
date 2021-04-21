@@ -18,6 +18,8 @@ class PublicProfile extends React.Component {
   }
 
   studentProfile() {
+
+
     return (
       <div className="card-body pt-0 pt-md-4">
         <div className="row">
@@ -29,10 +31,16 @@ class PublicProfile extends React.Component {
             <span className="font-weight-light">
               , {this.state.user.companyRole}
             </span>
+            <p className="mt-2 h5 font-weight-300">
+              {this.state.user.companyName}
+            </p>
           </h3>
           <div className="h5 font-weight-300">
             {this.state.user.passOutYear} Passed Out
           </div>
+          {/* {collegeOptions[parseInt(this.state.user.collegeId[2])]} */}
+          {console.log(this.state.user.collegeId)}
+          {console.log(this.state.user)}
           <a
             href={`${this.state.user.linkedIn}`}
             target="_blank"

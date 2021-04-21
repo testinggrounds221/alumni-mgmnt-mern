@@ -19,33 +19,39 @@ class Peers extends React.Component {
     const deptOptions = ["", "IT", "CS", "Mech", "Civil"];
 
     return (
-      <div className="row">
-        {this.state.users.map((user) => {
-          return (
-            <div class="col-sm-4">
-              <div className="card m-4 bg-dark text-white" style={{ width: "20rem" }}>
-                <div className="card-body text-center">
-                  <h5 className="card-title">{user.firstName}</h5>
-                  <p className="card-text">
-                    Passed out on {user.passOutYear} from{" "}
-                    {deptOptions[parseInt(user.departmentId[1])]} department,{" "}
-                    {user.firstName} is a {user.companyRole} in{" "}
-                    {user.companyName}
-                  </p>
-                  <a
-                    target="_blank"
-                    rel="noreferrer"
-                    href={`https://alumnimgmnt.netlify.app/publicprofile/${user._id}`}
-                    className="btn btn-primary"
-                  >
-                    View Profile
-                  </a>
+      <React.Fragment>
+        <h4 className="text-center display-4">My peers</h4>
+        <div className="row">
+          {this.state.users.map((user) => {
+            return (
+              <div class="col-sm-4">
+                <div
+                  className="card m-4 bg-dark text-white"
+                  style={{ width: "20rem" }}
+                >
+                  <div className="card-body text-center">
+                    <h5 className="card-title">{user.firstName}</h5>
+                    <p className="card-text">
+                      Passed out on {user.passOutYear} from{" "}
+                      {deptOptions[parseInt(user.departmentId[1])]} department,{" "}
+                      {user.firstName} is a {user.companyRole} in{" "}
+                      {user.companyName}
+                    </p>
+                    <a
+                      target="_blank"
+                      rel="noreferrer"
+                      href={`https://alumnimgmnt.netlify.app/publicprofile/${user._id}`}
+                      className="btn btn-primary"
+                    >
+                      View Profile
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
+            );
+          })}
+        </div>
+      </React.Fragment>
     );
   }
 }

@@ -71,8 +71,8 @@ class SignUp extends React.Component {
       phoneNumber: Yup.number()
         .positive("Phone Num to be Positive")
         .required("Phone Num is Required"),
-      companyName: Yup.string().required("Company nm req"),
-      companyRole: Yup.string().required("Company nm req"),
+      companyName: Yup.string().required("Company name is required"),
+      companyRole: Yup.string().required("Company role is required"),
       specalization: Yup.string(),
       linkedIn: Yup.string(),
       email: Yup.string()

@@ -52,6 +52,7 @@ class TableView extends React.Component {
 
               <th>Authenticate</th>
               <th>Linked Profile</th>
+              <th>Alumni Profile</th>
             </tr>
           </thead>
           <tbody>

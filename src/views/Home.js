@@ -19,11 +19,7 @@ class Home extends React.Component {
           Welcome To Cumulus Alumni Management System
         </h1>
         <div className="text-center mt-5">
-          <Link
-            to="/signup"
-            className="btn btn-primary m-3 "
-            role="button"
-          >
+          <Link to="/signup" className="btn btn-primary m-3 " role="button">
             Sign Up
           </Link>
           {localStorage.getItem("token") === null && (
@@ -53,6 +49,18 @@ class Home extends React.Component {
               >
                 Logout
               </button>
+              <p>
+                Student ID - user: s1@alumni.com <br />
+                pass : 123456
+              </p>
+              <p>
+                College ID - user: cl1@alumni.com <br />
+                pass : cl1123456
+              </p>
+              <p>
+                Student ID - user: dir@alumni.com <br />
+                pass : dir123456
+              </p>
             </React.Fragment>
           )}
         </div>
