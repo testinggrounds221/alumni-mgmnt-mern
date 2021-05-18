@@ -1,10 +1,25 @@
-# Getting Started with Create React App
+# Alumni Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Single Page Application for Effective Alumni Management with various levels of authentications
+Submitted for Cloudathon
 
-## Available Scripts
+## Front end
 
-In the project directory, you can run:
+### [React](https://reactjs.org/)
+
+  Declarative, Component-Based, Responsive Library to create interactive UIs.
+
+### [Bootstrap](https://getbootstrap.com/)
+  Fast and Responsive Styling 
+
+### [Axios](https://www.npmjs.com/package/axios)
+  Promise based HTTP client for the browser and node.js  
+
+### [Formik](https://www.npmjs.com/package/formik)
+  Form Validation
+
+### [Yup](https://www.npmjs.com/package/yup)
+  Object Schema Creation
 
 ### `yarn start`
 
